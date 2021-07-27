@@ -13,8 +13,8 @@ require 'vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php';
 $CHANNEL_ACCESS_TOKEN=getenv('CHANNEL_ACCESS_TOKEN');
 $CHANNEL_SECRET=getenv('CHANNEL_SECRET');
 $FROM_ADRESS=getenv('FROM_ADRESS');
-//$TO_ADRESS=getenv('TO_ADRESS');
-$BCC_ADRESS=getenv('BCC_ADRESS');//BCC要らない場合は消す
+$TO_ADRESS=getenv('TO_ADRESS');
+//$BCC_ADRESS=getenv('BCC_ADRESS');//BCC要らない場合は消す
 $APP_PASSWORD=getenv('APP_PASSWORD');
 
 $contents = file_get_contents('php://input'); //POSTの生データを読み込む
