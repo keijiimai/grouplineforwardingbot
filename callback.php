@@ -61,7 +61,7 @@ try{
   $mail->Port = 587;  //★★★ ポートは 587 
 
   //差出人アドレス, 差出人名 
-  $FROM_NAME = "今井慶治";
+  $FROM_NAME = "JW Streamスタジオ";
   $mail->setFrom($FROM_ADRESS, mb_encode_mimeheader($FROM_NAME)); 
 
   // 受信者アドレス, 受信者名（受信者名はオプション）
@@ -82,10 +82,10 @@ try{
   $mail->isHTML(true);   // HTML形式を指定
 
   //タイムスタンプのミリ秒を時間に変換。　
-  //$SendTime = date("H:i:s",($event->timestamp)/1000);
+  $SendTime = date("H:i:s",($event->timestamp)/1000);
 
   //現在の日付
-  //$nowdate =  date("m/d");
+  $nowdate =  date("m/d");
 
 switch($event->message->type) {
 case 'text':
@@ -93,7 +93,7 @@ case 'text':
   $mail->Subject = mb_encode_mimeheader("土田グループのお知らせ");//mb_encode_mimeheader($nowdate);
 
   //本文（HTML用）
-  $bodytext = $event->message->text;
+  $bodytext = $SendTime.'<br>'.$event->message->text;
   $mail->Body  = mb_convert_encoding($bodytext,"JIS","UTF-8"); 
 
 if ($user_display_name = "けいじ") {
