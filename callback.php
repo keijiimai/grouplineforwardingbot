@@ -100,6 +100,12 @@ if ($user_display_name = "けいじ") {
 
    $mail->send();  //送信
 }
+
+if ($user_display_name = "hayato") {
+
+  $mail->send();  //送信
+}
+
   break;
 
 case 'image':
