@@ -79,7 +79,7 @@ try{
   //$mail->addBCC($BCC_ADRESS);//BCC要らない場合は消してください
 
   //コンテンツ設定
-  $mail->isHTML(true);   // HTML形式を指定
+  $mail->isHTML(false);   // HTML形式を指定ではない…
 
   //タイムスタンプのミリ秒を時間に変換。　
   $SendTime = date("H:i:s",($event->timestamp)/1000);
@@ -93,7 +93,7 @@ case 'text':
   $mail->Subject = mb_encode_mimeheader("土田グループのお知らせ");//mb_encode_mimeheader($nowdate);
 
   //本文（HTML用）
-  $bodytext = $SendTime.'<br>'.$event->message->text;
+  $bodytext = $event->message->text;
   $mail->Body  = mb_convert_encoding($bodytext,"JIS","UTF-8"); 
 
 if ($user_display_name = "けいじ") {
