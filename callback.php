@@ -61,7 +61,7 @@ try{
   $mail->Port = 587;  //★★★ ポートは 587 
 
   //差出人アドレス, 差出人名 
-  $FROM_NAME = "JW Streamスタジオ";
+  $FROM_NAME = "土田グループ";
   $mail->setFrom($FROM_ADRESS, mb_encode_mimeheader($FROM_NAME)); 
 
   // 受信者アドレス, 受信者名（受信者名はオプション）
