@@ -93,13 +93,13 @@ case 'text':
   $mail->Subject = mb_encode_mimeheader("土田グループのお知らせ");//mb_encode_mimeheader($nowdate);
 
   //本文（HTML用）
-  $bodytext = $event->message->text ."\n". $user_display_name;
+  $bodytext = $event->message->text ."\n\n". $user_display_name;
   $mail->Body  = mb_convert_encoding($bodytext,"JIS","UTF-8"); 
 
-if ($user_display_name = "けいじ") {
+//if ($user_display_name = "けいじ") {
 
    $mail->send();  //送信
-}
+//}
 
 //if ($user_display_name = "hayato") {
 
